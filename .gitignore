@@ -1,0 +1,8 @@
+# Ignore VSCode
+.vscode
+
+# Ignore raw no-intro.org data
+data/*.dat
+
+# Ignore pycache
+__pycache__
