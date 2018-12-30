@@ -54,16 +54,19 @@ def rename(filenames):
             g = _match_game(f)
             if g:
                 print("\"%s\" appears to be: \"%s\", renaming!" % (f, g.filename))
-                os.rename(f, g.filename)
+                os.rename(f, os.path.join(os.path.dirname(f), g.filename))
 
 
-def display_usage():
-    print('TODO')
+def display_usage(script_name):
+    print('Usage:')
+    print('$ python3 %s identify [filenames]' % script_name)
+    print('$ python3 %s rename [filenames]' % script_name)
 
 
 def main(argv):
     if len(argv) < 3:
-        display_usage()
+        display_usage(argv[0])
+        return 1
     if argv[1] == 'identify':
         identify(argv[2:])
     elif argv[1] == 'rename':
