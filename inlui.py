@@ -45,7 +45,7 @@ class DumpFrame(wx.Frame):
         console_text = wx.StaticText(panel, label="Console")
         rom_size_text = wx.StaticText(panel, label="Rom Size (mbit)")
 
-        self.console_input = wx.ComboBox(panel, choices=SUPPORTED_CONSOLES, value=SUPPORTED_CONSOLES[2])
+        self.console_input = wx.ComboBox(panel, choices=SUPPORTED_CONSOLES, value=SUPPORTED_CONSOLES[2], style=wx.CB_READONLY)
         self.console_input.SetSelection(2)
         self.rom_size_input = wx.TextCtrl(panel)
         self.rom_size_input.write("8")

@@ -1,5 +1,6 @@
 # Ignore VSCode
 .vscode
+.DS_Store
 
 # Ignore raw no-intro.org data
 data/*.dat
