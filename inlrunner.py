@@ -25,6 +25,11 @@ class INLRunner(object):
         dump_args = ['-c', console_name, '-z', str(rom_size_mbit), '-d', self._dump_filename]
         self._try_run_subprocess(dump_args)
     
+    def dump_nes_rom(self, console_name, mapper_name, prg_rom_size, chr_rom_size):
+        '''Attempt dump of any non-NES cartridge.'''
+        dump_args = ['-c', console_name, '-m', mapper_name, '-d', self._dump_filename, '-x', prg_rom_size, '-y', chr_rom_size]
+        self._try_run_subprocess(dump_args)
+    
     def readline_stdout(self):
         if self._process:
             return self._process.stdout.readline()

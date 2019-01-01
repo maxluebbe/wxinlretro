@@ -32,6 +32,7 @@ def _match_game(filename):
     games_dict = _load_game_dict(os.path.join('data', 'genesis.p'))
     games_dict.update(_load_game_dict(os.path.join('data', 'n64.p')))
     games_dict.update(_load_game_dict(os.path.join('data', 'gba.p')))
+    games_dict.update(_load_game_dict(os.path.join('data', 'nes_headerless.p')))
     d = _compute_sha1_hexdigest(filename)
     g = None
     if d in games_dict:

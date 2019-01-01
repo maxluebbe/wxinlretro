@@ -4,6 +4,7 @@
 
 # Ignore raw no-intro.org data
 data/*.dat
+data/*.xml
 
 # Ignore pycache
 __pycache__
